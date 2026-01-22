@@ -48,7 +48,7 @@ export default function Home() {
           trigger: containerRef.current,
           start: "top top",
           end: "+=150%",
-          scrub: 1,
+          scrub: true,
           pin: true,
           anticipatePin: 1,
         },

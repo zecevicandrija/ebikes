@@ -5,24 +5,25 @@
     background: rgba(10, 10, 15, 0.98);
     backdrop-filter: blur(15px);
     z-index: 90;
-    /* Below Navbar (100) so Logo/Burger are visible */
     transform: translateY(-100%);
     overflow-y: auto;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    /* Portal will put this in body, so fixed positioning works perfectly */
+    flex-direction: column;
+    /* Changed from align-items: center to avoid top clipping on overflow */
+    align-items: flex-start;
 }
 
 .menuContent {
     width: 100%;
     max-width: 1400px;
-    padding: 6rem 2rem;
-    min-height: 100%;
-    /* Ensure content stretches if needed */
+    padding: 2rem;
+    /* Use margin auto to center vertically if space permits, else scroll */
+    margin: auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    position: relative;
+    box-sizing: border-box;
 }
 
 .menuGrid {
@@ -30,6 +31,7 @@
     grid-template-columns: 3fr 1fr;
     gap: 4rem;
     align-items: start;
+    width: 100%;
 }
 
 .menuLinksContainer {
@@ -105,29 +107,47 @@
 
 /* Mobile Responsiveness */
 @media (max-width: 1024px) {
+    .menuContent {
+        padding-top: 8rem;
+        /* Space for fixed navbar header */
+        justify-content: flex-start;
+        margin: 0;
+    }
+
     .menuGrid {
         grid-template-columns: 1fr;
-        gap: 2rem;
+        gap: 3rem;
     }
 
     .menuLinksContainer {
         grid-template-columns: 1fr;
-        gap: 0;
+        /* Stack vertically on tablet/mobile */
+        gap: 1rem;
+    }
+
+    .menuColumn {
+        gap: 0.8rem;
+        /* tighter gap on mobile */
     }
 
     .linkWrapper {
-        /* Tighter spacing on mobile */
-        margin-bottom: 0.5rem;
+        margin-bottom: 0;
+    }
+
+    .menuLink {
+        font-size: 1.5rem;
+        /* Manageable size */
     }
 
     .menuInfo {
         border-left: none;
         padding-left: 0;
         border-top: 1px solid rgba(255, 255, 255, 0.1);
-        padding-top: 3rem;
+        padding-top: 2rem;
         flex-direction: row;
         gap: 2rem;
         flex-wrap: wrap;
+        margin-bottom: 2rem;
     }
 }
 
