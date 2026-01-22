@@ -1,0 +1,216 @@
+/* ========================================
+   VIDEO TOUR PAGE - PREMIUM BRUTALIST
+   ======================================== */
+
+.videoPage {
+    min-height: 100vh;
+    background: #0a0a0f;
+    color: #fff;
+    padding: 8rem 2rem 4rem;
+    position: relative;
+    overflow-x: hidden;
+    cursor: default;
+}
+
+.ambientGlow {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(212, 175, 55, 0.08) 0%, transparent 70%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+/* HEADER */
+.headerSection {
+    margin-bottom: 6rem;
+}
+
+.pageTitle {
+    font-family: var(--font-display);
+    font-size: clamp(3rem, 10vw, 8rem);
+    line-height: 0.9;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: -0.03em;
+}
+
+.hollowText {
+    -webkit-text-stroke: 1px rgba(255, 255, 255, 0.8);
+    color: transparent;
+    transition: color 0.5s ease;
+}
+
+.hollowText:hover {
+    color: #fff;
+}
+
+.subHeader {
+    font-family: var(--font-display);
+    font-size: 1.2rem;
+    color: #d4af37;
+    letter-spacing: 0.2em;
+    margin-top: 1rem;
+    text-transform: uppercase;
+}
+
+.headerLine {
+    width: 100%;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.1);
+    margin-top: 2rem;
+}
+
+/* GRID */
+.gridContainer {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 2rem;
+    grid-auto-flow: dense;
+    margin-bottom: 8rem;
+}
+
+.gridItem {
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(20, 20, 25, 0.4);
+    padding: 2.5rem;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.gridItem:hover {
+    border-color: rgba(212, 175, 55, 0.4);
+    background: rgba(20, 20, 25, 0.8);
+    transform: translateY(-5px);
+}
+
+.blockLabel {
+    font-family: var(--font-display);
+    font-size: 0.8rem;
+    color: #d4af37;
+    letter-spacing: 0.2em;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+}
+
+/* BLOCKS */
+
+/* Description Text (Left) */
+.blockText {
+    grid-column: 1 / 6;
+    grid-row: 1;
+}
+
+.paragraph {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.8);
+    font-weight: 300;
+    margin-bottom: 1.5rem;
+}
+
+.highlightText {
+    font-size: 1.1rem;
+    color: #fff;
+    font-weight: 500;
+    line-height: 1.7;
+}
+
+.divider {
+    width: 50px;
+    height: 2px;
+    background: #d4af37;
+    margin: 2rem 0;
+}
+
+.contactBtn {
+    display: inline-block;
+    margin-top: 2rem;
+    padding: 1rem 2rem;
+    border: 1px solid #d4af37;
+    color: #d4af37;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    transition: all 0.3s ease;
+    text-align: center;
+    align-self: flex-start;
+}
+
+.contactBtn:hover {
+    background: #d4af37;
+    color: #000;
+}
+
+/* Video Embed (Right) */
+.blockVideo {
+    grid-column: 6 / 13;
+    grid-row: 1;
+    padding: 0;
+    overflow: hidden;
+    min-height: 450px;
+    background: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.videoWrapper {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.videoFrame {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .gridContainer {
+        grid-template-columns: 1fr;
+    }
+
+    .blockText,
+    .blockVideo {
+        grid-column: 1 / -1;
+        grid-row: auto;
+    }
+
+    .blockText {
+        order: 2;
+    }
+
+    .blockVideo {
+        order: 1;
+        min-height: auto;
+        /* Using padding-top for aspect ratio fallback or aspect-ratio property */
+        aspect-ratio: 16/9;
+        width: 100%;
+        height: auto;
+        display: block;
+        /* Removing flex centering to let it fill width */
+    }
+
+    .videoWrapper {
+        /* Ensuring wrapper fills the grid item */
+        width: 100%;
+        height: 100%;
+    }
+
+    .pageTitle {
+        font-size: 14vw;
+    }
+}

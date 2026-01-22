@@ -1,0 +1,281 @@
+/* ========================================
+   GALLERY PAGE - PREMIUM BRUTALIST
+   ======================================== */
+
+.galleryPage {
+    min-height: 100vh;
+    background: #0a0a0f;
+    color: #fff;
+    padding: 8rem 2rem 4rem;
+    position: relative;
+    overflow-x: hidden;
+}
+
+.ambientGlow {
+    position: fixed;
+    top: 10%;
+    right: -20%;
+    width: 800px;
+    height: 800px;
+    background: radial-gradient(circle, rgba(212, 175, 55, 0.04) 0%, transparent 60%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+/* HEADER */
+.headerSection {
+    margin-bottom: 6rem;
+}
+
+.pageTitle {
+    font-family: var(--font-display);
+    font-size: clamp(3rem, 10vw, 8rem);
+    line-height: 0.9;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: -0.03em;
+}
+
+.hollowText {
+    -webkit-text-stroke: 1px rgba(255, 255, 255, 0.8);
+    color: transparent;
+    transition: color 0.5s ease;
+}
+
+.hollowText:hover {
+    color: #fff;
+}
+
+.headerLine {
+    width: 100%;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.1);
+    margin-top: 2rem;
+}
+
+/* SECTIONS */
+.section {
+    margin-bottom: 6rem;
+}
+
+.sectionTitle {
+    font-family: var(--font-display);
+    font-size: 1.2rem;
+    color: #d4af37;
+    letter-spacing: 0.2em;
+    margin-bottom: 2rem;
+    padding-left: 1rem;
+    border-left: 2px solid #d4af37;
+}
+
+/* GRID */
+.imageGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 1.5rem;
+}
+
+.imageWrapper {
+    position: relative;
+    aspect-ratio: 4 / 3;
+    /* Standard aspect ratio */
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: #1a1a1f;
+    transition: border-color 0.3s ease;
+}
+
+.imageWrapper:hover {
+    border-color: #d4af37;
+}
+
+.galleryImage {
+    object-fit: cover;
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), filter 0.6s ease;
+    filter: grayscale(20%);
+    /* Slight mute */
+}
+
+.imageWrapper:hover .galleryImage {
+    transform: scale(1.05);
+    filter: grayscale(0%);
+}
+
+.imageOverlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.imageWrapper:hover .imageOverlay {
+    opacity: 1;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .imageGrid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .sectionTitle {
+        font-size: 1rem;
+    }
+}
+
+/* LIGHTBOX */
+.lightboxOverlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(10, 10, 15, 0.95);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    animation: fadeIn 0.3s forwards;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+.lightboxContent {
+    position: relative;
+    width: 90vw;
+    height: 85vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.lightboxImageWrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.lightboxImage {
+    object-fit: contain;
+    animation: zoomIn 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes zoomIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* CONTROLS */
+.closeBtn {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    background: none;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    z-index: 1001;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding: 1rem;
+    transition: transform 0.3s ease;
+}
+
+.closeBtn span {
+    display: block;
+    width: 30px;
+    height: 2px;
+    background: #fff;
+    transition: all 0.3s ease;
+}
+
+.closeBtn span:first-child {
+    transform: rotate(45deg) translate(2px, 2px);
+}
+
+.closeBtn span:last-child {
+    transform: rotate(-45deg) translate(2px, -3px);
+}
+
+.closeBtn:hover {
+    transform: rotate(90deg);
+}
+
+.navBtn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #fff;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    z-index: 1001;
+    font-family: var(--font-body);
+}
+
+.navBtn:hover {
+    background: #d4af37;
+    border-color: #d4af37;
+    color: #000;
+}
+
+.prevBtn {
+    left: 2rem;
+}
+
+.nextBtn {
+    right: 2rem;
+}
+
+@media (max-width: 768px) {
+    .lightboxContent {
+        width: 100vw;
+        height: 80vh;
+    }
+
+    .navBtn {
+        width: 40px;
+        height: 40px;
+        background: rgba(0, 0, 0, 0.5);
+    }
+
+    .prevBtn {
+        left: 1rem;
+    }
+
+    .nextBtn {
+        right: 1rem;
+    }
+
+    .closeBtn {
+        top: 1rem;
+        right: 1rem;
+    }
+}

@@ -1,0 +1,255 @@
+/* ========================================
+   PRICES PAGE - PREMIUM BRUTALIST
+   ======================================== */
+
+.pricesPage {
+    min-height: 100vh;
+    background: #0a0a0f;
+    color: #fff;
+    padding: 8rem 2rem 4rem;
+    position: relative;
+    overflow-x: hidden;
+}
+
+.ambientGlow {
+    position: fixed;
+    top: 40%;
+    left: -10%;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(212, 175, 55, 0.06) 0%, transparent 70%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+/* HEADER */
+.headerSection {
+    margin-bottom: 6rem;
+}
+
+.pageTitle {
+    font-family: var(--font-display);
+    font-size: clamp(3rem, 10vw, 8rem);
+    line-height: 0.9;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: -0.03em;
+}
+
+.hollowText {
+    -webkit-text-stroke: 1px rgba(255, 255, 255, 0.8);
+    color: transparent;
+    transition: color 0.5s ease;
+}
+
+.hollowText:hover {
+    color: #fff;
+}
+
+.headerLine {
+    width: 100%;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.1);
+    margin-top: 2rem;
+}
+
+/* GRID */
+.gridContainer {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 2rem;
+    grid-auto-flow: dense;
+}
+
+.gridItem {
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(20, 20, 25, 0.4);
+    padding: 2.5rem;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.gridItem:hover {
+    border-color: rgba(212, 175, 55, 0.4);
+    background: rgba(20, 20, 25, 0.8);
+    transform: translateY(-5px);
+}
+
+/* BLOCKS */
+
+/* Rental Info (Top Left) */
+.blockRentalInfo {
+    grid-column: 1 / 6;
+    grid-row: 1;
+}
+
+/* Rental Image (Top Right) */
+.blockRentalImage {
+    grid-column: 6 / 13;
+    grid-row: 1;
+    padding: 0;
+    border: none;
+    min-height: 400px;
+}
+
+/* Tour Image (Bottom Left) */
+.blockTourImage {
+    grid-column: 1 / 8;
+    grid-row: 2;
+    padding: 0;
+    border: none;
+    min-height: 400px;
+}
+
+/* Tour Info (Bottom Right) */
+.blockTourInfo {
+    grid-column: 8 / 13;
+    grid-row: 2;
+}
+
+/* Content Styles */
+.itemTitle {
+    font-family: var(--font-display);
+    font-size: 1rem;
+    color: #d4af37;
+    letter-spacing: 0.2em;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+}
+
+.priceGroup {
+    margin-bottom: 2rem;
+}
+
+.priceRow {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 0.5rem;
+}
+
+.priceLabel {
+    font-size: 1.5rem;
+    font-weight: 300;
+    color: #fff;
+}
+
+.priceValue {
+    font-family: var(--font-display);
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #d4af37;
+}
+
+.divider {
+    width: 100%;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.1);
+    margin: 1rem 0;
+}
+
+.description {
+    color: rgba(255, 255, 255, 0.6);
+    line-height: 1.6;
+    margin-bottom: 2rem;
+}
+
+.durationInfo {
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.icon {
+    font-size: 1.2rem;
+}
+
+.bookBtn {
+    display: inline-block;
+    padding: 1rem 2rem;
+    border: 1px solid #fff;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    transition: all 0.3s ease;
+    text-align: center;
+    margin-top: auto;
+}
+
+.bookBtn:hover {
+    background: #d4af37;
+    border-color: #d4af37;
+    color: #000;
+}
+
+/* Images */
+.imageInner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.pImage {
+    object-fit: cover;
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    /* FULL COLOR as requested (no filter) */
+}
+
+.blockRentalImage:hover .pImage,
+.blockTourImage:hover .pImage {
+    transform: scale(1.05);
+    /* Zoom effect instead of grayscale */
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .gridContainer {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .blockRentalInfo,
+    .blockRentalImage,
+    .blockTourInfo,
+    .blockTourImage {
+        grid-column: 1 / -1;
+        grid-row: auto;
+    }
+
+    /* Reorder for mobile: Info then Image */
+    .blockRentalInfo {
+        order: 1;
+    }
+
+    .blockRentalImage {
+        order: 2;
+        min-height: 300px;
+    }
+
+    .blockTourInfo {
+        order: 3;
+    }
+
+    .blockTourImage {
+        order: 4;
+        min-height: 300px;
+    }
+
+    .pageTitle {
+        font-size: 14vw;
+    }
+}

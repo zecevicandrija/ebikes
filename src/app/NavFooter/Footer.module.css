@@ -1,0 +1,145 @@
+.footer {
+    background: #050508;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 6rem 2rem 2rem;
+    color: #fff;
+    margin-top: auto;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 5rem;
+}
+
+/* TOP GRID */
+.topSection {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1.5fr;
+    gap: 4rem;
+}
+
+/* Column 1: Brand */
+.logoCol {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.logo {
+    font-family: var(--font-display);
+    font-size: 2rem;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    color: #fff;
+    text-decoration: none;
+    line-height: 1;
+}
+
+.tagline {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.5);
+    line-height: 1.6;
+    max-width: 300px;
+}
+
+.highlight {
+    color: #d4af37;
+}
+
+/* Columns 2-4: Links */
+.colTitle {
+    font-family: var(--font-display);
+    font-size: 0.9rem;
+    color: #d4af37;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+}
+
+.navCol {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.link {
+    font-family: var(--font-body);
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.95rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    width: fit-content;
+}
+
+.link:hover {
+    color: #fff;
+    transform: translateX(5px);
+}
+
+.contactInfo p {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.95rem;
+    margin-bottom: 0.8rem;
+    line-height: 1.6;
+}
+
+.contactInfo a {
+    color: #fff;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+    transition: border-color 0.3s;
+}
+
+.contactInfo a:hover {
+    border-color: #d4af37;
+}
+
+/* BOTTOM */
+.divider {
+    width: 100%;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.bottomSection {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.copyright {
+    color: rgba(255, 255, 255, 0.3);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .topSection {
+        grid-template-columns: 1fr 1fr;
+        gap: 3rem;
+    }
+
+    .logoCol {
+        grid-column: 1 / -1;
+        margin-bottom: 1rem;
+    }
+}
+
+@media (max-width: 640px) {
+    .topSection {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+
+    .bottomSection {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}

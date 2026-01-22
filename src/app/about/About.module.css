@@ -1,0 +1,318 @@
+/* ========================================
+   BRUTALIST / COMPLEX ABOUT PAGE
+   ======================================== */
+
+.aboutPage {
+    min-height: 100vh;
+    background: #0a0a0f;
+    color: #fff;
+    padding: 8rem 2rem 4rem;
+    position: relative;
+    overflow: hidden;
+}
+
+
+
+.ambientGlow {
+    position: fixed;
+    top: 20%;
+    right: -10%;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(212, 175, 55, 0.08) 0%, transparent 70%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+.container {
+    max-width: 1600px;
+    /* Wider for impact */
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+/* --- HERO SECTION --- */
+.heroSection {
+    margin-bottom: 6rem;
+    position: relative;
+}
+
+.heroTitle {
+    font-family: var(--font-display);
+    font-size: clamp(4rem, 12vw, 10rem);
+    line-height: 0.85;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: -0.04em;
+}
+
+.hollowText {
+    -webkit-text-stroke: 1px rgba(255, 255, 255, 0.8);
+    /* Outline effect */
+    color: transparent;
+    transition: color 0.5s ease;
+}
+
+.hollowText:hover {
+    color: #fff;
+    /* Fill on hover for interactivity */
+}
+
+.heroLine {
+    width: 100%;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.15);
+    margin-top: 2rem;
+}
+
+.scrolldown {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%) rotate(90deg);
+    transform-origin: right center;
+    font-family: var(--font-display);
+    font-size: 0.9rem;
+    letter-spacing: 0.2em;
+    color: #d4af37;
+}
+
+/* --- GRID LAYOUT --- */
+.gridContainer {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-auto-rows: minmax(200px, auto);
+    gap: 2rem;
+}
+
+/* Common Grid Item Styles */
+.gridItem {
+    position: relative;
+    padding: 2rem;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    /* Brutalist borders */
+    background: rgba(15, 15, 20, 0.4);
+    transition: border-color 0.3s ease, transform 0.3s ease;
+}
+
+.gridItem:hover {
+    border-color: rgba(212, 175, 55, 0.3);
+    background: rgba(15, 15, 20, 0.8);
+}
+
+.sectionLabel {
+    font-family: var(--font-display);
+    font-size: 0.8rem;
+    color: #d4af37;
+    letter-spacing: 0.15em;
+    margin-bottom: 1.5rem;
+    opacity: 0.8;
+}
+
+/* --- BLOCKS --- */
+
+/* 1. Sustainability (Top Left) */
+.blockSustainability {
+    grid-column: 1 / 8;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.bigText {
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    font-weight: 400;
+    line-height: 1.1;
+    color: #fff;
+}
+
+.goldHighlight {
+    color: #d4af37;
+    font-style: italic;
+    font-weight: 600;
+}
+
+/* 2. Image (Top Right - Tall) */
+.blockImage {
+    grid-column: 8 / 13;
+    grid-row: 1 / 3;
+    /* Spans 2 rows */
+    padding: 0;
+    /* Full image */
+    border: none;
+}
+
+.imageInner {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    min-height: 500px;
+}
+
+.aboutImage {
+    object-fit: cover;
+    filter: grayscale(100%) contrast(1.2);
+    /* Brutal feel */
+    transition: filter 0.5s ease;
+}
+
+.blockImage:hover .aboutImage {
+    filter: grayscale(0%) contrast(1.1);
+}
+
+.imgOverlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(10, 10, 15, 0) 0%, rgba(10, 10, 15, 0.8) 100%);
+}
+
+/* 3. The Context (Below Sustainability) */
+.blockContext {
+    grid-column: 1 / 5;
+    grid-row: 2 / 3;
+}
+
+.descText {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.7);
+    font-weight: 300;
+}
+
+/* 4. The Motto (Full Width Band) */
+.blockMotto {
+    grid-column: 1 / 13;
+    padding: 4rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #d4af37;
+    /* Bold background */
+    color: #000;
+}
+
+.blockMotto:hover {
+    background: #f5d87a;
+    color: #000;
+    border-color: transparent;
+}
+
+.mottoWrapper {
+    text-align: center;
+    max-width: 800px;
+}
+
+.quoteIcon {
+    font-size: 4rem;
+    line-height: 1;
+    display: block;
+    margin-bottom: 1rem;
+    opacity: 0.3;
+}
+
+.mottoText {
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 5vw, 4rem);
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: -0.02em;
+    margin-bottom: 1rem;
+}
+
+.mottoSub {
+    font-size: 1.2rem;
+    font-weight: 500;
+    opacity: 0.8;
+}
+
+/* 5. Experience (Left Bottom) */
+.blockExperience {
+    grid-column: 1 / 7;
+}
+
+.expContent {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.separator {
+    width: 50px;
+    height: 2px;
+    background: #d4af37;
+}
+
+/* 6. CTA (Right Bottom) */
+.blockCta {
+    grid-column: 7 / 13;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 2rem;
+    border-color: rgba(212, 175, 55, 0.5);
+}
+
+.ctaTitle {
+    font-family: var(--font-display);
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: #fff;
+}
+
+.ctaButton {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 1.5rem 2rem;
+    background: #fff;
+    color: #000;
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+}
+
+.ctaButton:hover {
+    background: #d4af37;
+    transform: translateY(-2px);
+}
+
+.rentalOption {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 1024px) {
+    .heroTitle {
+        font-size: 15vw;
+    }
+
+    .gridContainer {
+        grid-template-columns: 1fr;
+        grid-auto-rows: auto;
+    }
+
+    .blockSustainability,
+    .blockImage,
+    .blockContext,
+    .blockMotto,
+    .blockExperience,
+    .blockCta {
+        grid-column: 1 / -1;
+        grid-row: auto;
+    }
+
+    .blockImage {
+        min-height: 400px;
+    }
+
+    .scrolldown {
+        display: none;
+    }
+}

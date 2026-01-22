@@ -1,0 +1,249 @@
+/* ========================================
+   LOCATIONS PAGE - PREMIUM BRUTALIST
+   ======================================== */
+
+.locationsPage {
+    min-height: 100vh;
+    background: #0a0a0f;
+    color: #fff;
+    padding: 8rem 2rem 4rem;
+    position: relative;
+    overflow-x: hidden;
+}
+
+.ambientGlow {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 900px;
+    height: 900px;
+    background: radial-gradient(circle, rgba(212, 175, 55, 0.03) 0%, transparent 60%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+/* HEADER */
+.headerSection {
+    margin-bottom: 6rem;
+    text-align: center;
+}
+
+.pageTitle {
+    font-family: var(--font-display);
+    font-size: clamp(3rem, 12vw, 9rem);
+    line-height: 0.9;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: -0.03em;
+}
+
+.hollowText {
+    -webkit-text-stroke: 1px rgba(255, 255, 255, 0.8);
+    color: transparent;
+    transition: color 0.5s ease;
+}
+
+.hollowText:hover {
+    color: #fff;
+}
+
+.headerLine {
+    width: 2px;
+    height: 100px;
+    background: rgba(255, 255, 255, 0.1);
+    margin: 2rem auto;
+}
+
+.subHeader {
+    font-family: var(--font-display);
+    font-size: 1.2rem;
+    color: #d4af37;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+}
+
+/* GRID */
+.gridContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-bottom: 6rem;
+}
+
+.locationCard {
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(20, 20, 25, 0.4);
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.4s ease;
+    min-height: 600px;
+    /* Taller for map */
+}
+
+.locationCard:hover {
+    border-color: rgba(212, 175, 55, 0.5);
+    background: rgba(20, 20, 25, 0.8);
+    transform: translateY(-10px);
+}
+
+.locationCard:hover .number {
+    color: #d4af37;
+}
+
+.cardInfo {
+    margin-bottom: 2rem;
+}
+
+.cardHeader {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 2rem;
+}
+
+.number {
+    font-family: var(--font-display);
+    font-size: 4rem;
+    font-weight: 800;
+    color: rgba(255, 255, 255, 0.05);
+    line-height: 1;
+    margin-bottom: 1rem;
+    transition: color 0.4s;
+}
+
+.locationName {
+    font-family: var(--font-display);
+    font-size: 2rem;
+    font-weight: 700;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+.addressBlock {
+    margin-bottom: 1.5rem;
+}
+
+.address {
+    font-size: 1.5rem;
+    color: #d4af37;
+    font-weight: 500;
+}
+
+.city {
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.6);
+    margin-top: 0.5rem;
+}
+
+.description {
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.6;
+}
+
+/* MAP */
+.mapContainer {
+    width: 100%;
+    height: 300px;
+    background: #000;
+    margin-bottom: 2rem;
+    margin-top: auto;
+    /* Push to bottom for alignment */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    filter: grayscale(100%) invert(92%);
+    transition: filter 0.3s;
+}
+
+.locationCard:hover .mapContainer {
+    filter: grayscale(0%);
+}
+
+.mapFrame {
+    width: 100%;
+    height: 100%;
+}
+
+.directionBtn {
+    display: inline-flex;
+    align-items: center;
+    gap: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #d4af37;
+    color: #d4af37;
+    font-family: var(--font-display);
+    font-size: 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    transition: all 0.3s;
+    width: fit-content;
+}
+
+.directionBtn:hover {
+    color: #fff;
+    border-color: #fff;
+    padding-left: 10px;
+}
+
+.arrow {
+    transition: transform 0.3s;
+}
+
+.directionBtn:hover .arrow {
+    transform: translate(5px, -5px);
+}
+
+/* CTA Section */
+.ctaSection {
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 4rem;
+}
+
+.ctaText {
+    color: rgba(255, 255, 255, 0.5);
+    margin-bottom: 1rem;
+}
+
+.contactLink {
+    color: #fff;
+    font-size: 1.1rem;
+    text-decoration: underline;
+    text-underline-offset: 5px;
+    transition: color 0.3s;
+}
+
+.contactLink:hover {
+    color: #d4af37;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .gridContainer {
+        grid-template-columns: 1fr;
+    }
+
+    .locationCard {
+        padding: 2rem;
+    }
+
+    .mapContainer {
+        height: 250px;
+    }
+
+    .pageTitle {
+        font-size: 14vw;
+    }
+
+    .headerLine {
+        height: 60px;
+        margin: 1.5rem auto;
+    }
+}

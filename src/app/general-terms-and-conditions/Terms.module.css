@@ -1,0 +1,140 @@
+/* ========================================
+   TERMS PAGE - PREMIUM BRUTALIST
+   ======================================== */
+
+.termsPage {
+    min-height: 100vh;
+    background: #0a0a0f;
+    color: #fff;
+    padding: 8rem 2rem 4rem;
+    position: relative;
+    overflow-x: hidden;
+    cursor: default;
+}
+
+.ambientGlow {
+    position: fixed;
+    top: 20%;
+    left: 20%;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(212, 175, 55, 0.06) 0%, transparent 70%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+.container {
+    max-width: 1000px;
+    /* Reduced max-width for readability */
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+/* HEADER */
+.headerSection {
+    margin-bottom: 6rem;
+}
+
+.pageTitle {
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 8vw, 6rem);
+    line-height: 0.9;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: -0.03em;
+}
+
+.hollowText {
+    -webkit-text-stroke: 1px rgba(255, 255, 255, 0.8);
+    color: transparent;
+    transition: color 0.5s ease;
+}
+
+.hollowText:hover {
+    color: #fff;
+}
+
+.headerLine {
+    width: 100%;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.1);
+    margin-top: 2rem;
+}
+
+/* CONTENT LAYOUT */
+.contentWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+}
+
+.articleBlock {
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(20, 20, 25, 0.4);
+    padding: 3rem;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.articleBlock:hover {
+    border-color: rgba(212, 175, 55, 0.4);
+    background: rgba(20, 20, 25, 0.6);
+}
+
+.articleTitle {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    color: #d4af37;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+    padding-bottom: 1rem;
+    display: inline-block;
+}
+
+.clauseList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.clause {
+    display: flex;
+    gap: 1.5rem;
+    align-items: baseline;
+}
+
+.clauseLabel {
+    font-family: var(--font-display);
+    color: rgba(255, 255, 255, 0.3);
+    font-weight: 700;
+    min-width: 20px;
+}
+
+.clauseText {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: rgba(255, 255, 255, 0.8);
+    font-weight: 300;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .pageTitle {
+        font-size: 12vw;
+    }
+
+    .articleBlock {
+        padding: 2rem;
+    }
+
+    .clause {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+}

@@ -1,0 +1,281 @@
+/* ========================================
+   BOOK PAGE - PREMIUM BRUTALIST
+   ======================================== */
+
+.bookPage {
+    min-height: 100vh;
+    background: #0a0a0f;
+    color: #fff;
+    padding: 8rem 2rem 4rem;
+    position: relative;
+    overflow-x: hidden;
+}
+
+.ambientGlow {
+    position: fixed;
+    bottom: -20%;
+    left: 20%;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(212, 175, 55, 0.05) 0%, transparent 70%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+/* HEADER */
+.headerSection {
+    margin-bottom: 5rem;
+}
+
+.pageTitle {
+    font-family: var(--font-display);
+    font-size: clamp(3rem, 10vw, 8rem);
+    line-height: 0.9;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: -0.03em;
+}
+
+.hollowText {
+    -webkit-text-stroke: 1px rgba(255, 255, 255, 0.8);
+    color: transparent;
+    transition: color 0.5s ease;
+}
+
+.hollowText:hover {
+    color: #fff;
+}
+
+.headerLine {
+    width: 100%;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.1);
+    margin-top: 2rem;
+}
+
+/* GRID LAYOUT */
+.gridContainer {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 2rem;
+}
+
+.gridItem {
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(20, 20, 25, 0.4);
+    padding: 3rem;
+    transition: all 0.3s ease;
+}
+
+.gridItem:hover {
+    border-color: rgba(212, 175, 55, 0.3);
+    background: rgba(20, 20, 25, 0.8);
+}
+
+.blockTitle {
+    font-family: var(--font-display);
+    font-size: 0.9rem;
+    color: #d4af37;
+    letter-spacing: 0.2em;
+    margin-bottom: 2.5rem;
+    text-transform: uppercase;
+}
+
+/* INFO BLOCK (Left) */
+.blockInfo {
+    grid-column: 1 / 6;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.textContent {
+    margin-bottom: 4rem;
+}
+
+.paragraph {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.7);
+    font-weight: 300;
+    margin-bottom: 1.5rem;
+}
+
+.separator {
+    width: 40px;
+    height: 2px;
+    background: #d4af37;
+    margin: 2rem 0;
+}
+
+.link {
+    color: #d4af37;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    transition: color 0.3s;
+}
+
+.link:hover {
+    color: #fff;
+}
+
+.contactDetails {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 2rem;
+}
+
+.brandName {
+    font-family: var(--font-display);
+    font-size: 1.25rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 0.5rem;
+}
+
+.phoneNum {
+    font-size: 1.1rem;
+    color: #d4af37;
+    font-weight: 500;
+}
+
+/* FORM BLOCK (Right) */
+.blockForm {
+    grid-column: 6 / 13;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+.inputGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.label {
+    font-family: var(--font-display);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.input {
+    width: 100%;
+    padding: 1rem 0;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    color: #fff;
+    font-family: var(--font-body);
+    font-size: 1.1rem;
+    border-radius: 0;
+    /* Brutal sharp edges */
+    transition: border-color 0.3s, background 0.3s;
+}
+
+.input:focus {
+    outline: none;
+    border-bottom-color: #d4af37;
+    background: linear-gradient(to top, rgba(212, 175, 55, 0.05), transparent);
+}
+
+.textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+/* Submit Button */
+.submitBtn {
+    position: relative;
+    margin-top: 1rem;
+    padding: 1.25rem;
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #fff;
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 1rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    cursor: pointer;
+    overflow: hidden;
+    transition: border-color 0.3s;
+}
+
+.submitBtn span {
+    position: relative;
+    z-index: 2;
+    transition: color 0.3s;
+}
+
+.btnFill {
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: #d4af37;
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    z-index: 1;
+}
+
+.submitBtn:hover {
+    border-color: #d4af37;
+}
+
+.submitBtn:hover .btnFill {
+    transform: translateX(100%);
+}
+
+.submitBtn:hover span {
+    color: #000;
+}
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+    .gridContainer {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .blockInfo,
+    .blockForm {
+        grid-column: 1 / -1;
+    }
+
+    .blockInfo {
+        order: 2;
+        /* Form first on mobile? Or Info first? Usually Info first is fine. */
+        order: 1;
+    }
+
+    .blockForm {
+        order: 2;
+    }
+
+    .row {
+        grid-template-columns: 1fr;
+    }
+
+    .pageTitle {
+        font-size: 14vw;
+    }
+}
