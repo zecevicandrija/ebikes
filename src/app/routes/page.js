@@ -35,13 +35,38 @@ export default function Routes() {
 
     // Animate Modal Open
     useGSAP(() => {
+        const tl = gsap.timeline();
+
+        // Page Entrance
+        tl.fromTo(`.${styles.pageTitle}`,
+            { y: 100, opacity: 0 },
+            { y: 0, opacity: 1, duration: 1, ease: "power3.out" }
+        )
+            .fromTo(`.${styles.headerLine}`,
+                { scaleX: 0, opacity: 0 },
+                { scaleX: 1, opacity: 1, duration: 1, ease: "power3.out" },
+                "-=0.5"
+            );
+
+        tl.fromTo(`.${styles.gridItem}, .${styles.gallerySection}`,
+            { y: 50, opacity: 0 },
+            {
+                y: 0,
+                opacity: 1,
+                duration: 0.8,
+                stagger: 0.1,
+                ease: "power2.out"
+            },
+            "-=0.5"
+        );
+
         if (modalOpen && modalRef.current) {
             gsap.fromTo(modalRef.current,
                 { opacity: 0, scale: 0.9 },
                 { opacity: 1, scale: 1, duration: 0.5, ease: "power3.out" }
             );
         }
-    }, { dependencies: [modalOpen] });
+    }, { dependencies: [modalOpen], scope: containerRef });
 
     // Handle ESC key
     useEffect(() => {

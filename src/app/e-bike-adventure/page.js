@@ -1,10 +1,46 @@
+"use client";
+
+import { useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
 import styles from "./Adv.module.css";
 
 export default function Adventure() {
+    const containerRef = useRef(null);
+
+    useGSAP(() => {
+        const tl = gsap.timeline();
+
+        // Header Animation
+        tl.fromTo(`.${styles.pageTitle}`,
+            { y: 100, opacity: 0 },
+            { y: 0, opacity: 1, duration: 1, ease: "power3.out" }
+        )
+            .fromTo(`.${styles.headerLine}`,
+                { scaleX: 0, opacity: 0 },
+                { scaleX: 1, opacity: 1, duration: 1, ease: "power3.out" },
+                "-=0.5"
+            );
+
+        // Sections & Images
+        tl.fromTo(`.${styles.gridItem}`,
+            { y: 50, opacity: 0 },
+            {
+                y: 0,
+                opacity: 1,
+                duration: 0.8,
+                stagger: 0.1,
+                ease: "power2.out"
+            },
+            "-=0.5"
+        );
+
+    }, { scope: containerRef });
+
     return (
-        <div className={styles.advPage}>
+        <div ref={containerRef} className={styles.advPage}>
             <div className={styles.ambientGlow} />
 
             <div className={styles.container}>

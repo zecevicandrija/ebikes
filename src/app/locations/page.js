@@ -1,9 +1,45 @@
+"use client";
+
+import { useRef } from "react";
 import Link from "next/link";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
 import styles from "./Locations.module.css";
 
 export default function Locations() {
+    const containerRef = useRef(null);
+
+    useGSAP(() => {
+        const tl = gsap.timeline();
+
+        // Header Animation
+        tl.fromTo(`.${styles.pageTitle}`,
+            { y: 100, opacity: 0 },
+            { y: 0, opacity: 1, duration: 1, ease: "power3.out" }
+        )
+            .fromTo(`.${styles.headerLine}`,
+                { scaleX: 0, opacity: 0 },
+                { scaleX: 1, opacity: 1, duration: 1, ease: "power3.out" },
+                "-=0.5"
+            );
+
+        // Sections & Images
+        tl.fromTo(`.${styles.locationCard}, .${styles.ctaSection}`,
+            { y: 50, opacity: 0 },
+            {
+                y: 0,
+                opacity: 1,
+                duration: 0.8,
+                stagger: 0.2,
+                ease: "power2.out"
+            },
+            "-=0.5"
+        );
+
+    }, { scope: containerRef });
+
     return (
-        <div className={styles.locationsPage}>
+        <div ref={containerRef} className={styles.locationsPage}>
             <div className={styles.ambientGlow} />
 
             <div className={styles.container}>
@@ -107,7 +143,7 @@ export default function Locations() {
                 {/* CTA */}
                 <div className={styles.ctaSection}>
                     <p className={styles.ctaText}>Not sure which one to choose?</p>
-                    <Link href="/contact" className={styles.contactLink}>Contact us for advice</Link>
+                    <Link href="/book" className={styles.contactLink}>Contact us for advice</Link>
                 </div>
 
             </div>
