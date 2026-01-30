@@ -1,0 +1,39 @@
+{
+    "Uljeb": {
+        "title": "Udruženje ljubitelja električnih bicikala",
+        "description": "ULJEB je udruženje posvećeno razvoju i promociji električnih bicikala kao održivog, zdravog i dostupnog vida kretanja u gradovima Srbije.",
+        "vision": "Vizija",
+        "visionExtended": "Verujemo da gradovi mogu biti tiši, čistiji i prijatniji za život – uz manje automobila, više bicikala i pametna energetska rešenja. Električni bicikli nisu samo rekreacija, već realna alternativa svakodnevnom prevozu, posebno u urbanim sredinama.",
+        "whatWeDoTitle": "Šta radimo",
+        "whatWeDoDesc": "Kroz naše aktivnosti povezujemo održivu mobilnost, obnovljive izvore energije i javni prostor. Fokusirani smo na praktična i vidljiva rešenja koja građani mogu odmah da koriste.",
+        "whatWeDoListIntro": "Naši ključni pravci delovanja uključuju:",
+        "whatWeDoList": [
+            "promociju upotrebe električnih bicikala",
+            "razvoj solarnih punionica za e-bicikle u javnim prostorima",
+            "saradnju sa lokalnim samoupravama, kompanijama i institucijama",
+            "edukaciju građana o prednostima održive mobilnosti i energetske efikasnosti"
+        ],
+        "solarTitle": "Solarne punionice za e-bicikle",
+        "solarDesc": "ULJEB razvija i postavlja javne, energetski nezavisne solarne punionice za električne bicikle. Punionice koriste energiju sunca, ne opterećuju elektroenergetsku mrežu i dostupne su svim korisnicima.",
+        "solarDesc2": "Prva punionica postavljena je u Beogradu, na jednoj od najposećenijih lokacija za rekreaciju i biciklizam, kao pilot-projekat koji pokazuje kako inovacije mogu direktno da unaprede kvalitet života u gradu.",
+        "modelTitle": "Ovaj model je:",
+        "modelList": [
+            "ekološki održiv",
+            "lako skalabilan",
+            "idealan za primenu u parkovima, šetalištima, rekreativnim zonama i gradskim jezgrima"
+        ],
+        "whyTitle": "Zašto ULJEB",
+        "whyDesc": "ULJEB okuplja ljude koji veruju da su energija, mobilnost i javni prostor neraskidivo povezani. Naš cilj nije samo infrastruktura, već promena navika – da e-bicikl postane normalan, prihvaćen i poželjan izbor.",
+        "cooperationTitle": "Otvoreni smo za saradnju sa:",
+        "cooperationList": [
+            "lokalnim samoupravama",
+            "društveno odgovornim kompanijama",
+            "fondacijama i organizacijama koje dele naše vrednosti"
+        ],
+        "conclusion": "Zajedno možemo da gradimo gradove koji su zdraviji, dostupniji i spremni za budućnost.",
+        "seo": {
+            "title": "ULJEB - Udruženje ljubitelja električnih bicikala",
+            "description": "ULJEB promoviše električne bicikle i održivu mobilnost u Srbiji. Saznajte više o našim solarnim punionicama i misiji za čistije gradove."
+        }
+    }
+}

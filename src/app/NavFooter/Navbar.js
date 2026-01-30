@@ -3,6 +3,7 @@
 import { useState, useRef, useEffect } from "react";
 import { createPortal } from "react-dom";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
@@ -20,6 +21,7 @@ const menuItems = [
     { label: "Routes", href: "/routes" },
     { label: "Video of the Tour", href: "/video-tour" },
     { label: "General Terms", href: "/general-terms-and-conditions" },
+    { label: "Uljeb", href: "/uljeb" },
 ];
 
 export default function Navbar() {
@@ -155,7 +157,7 @@ export default function Navbar() {
                         <div className={styles.infoBlock}>
                             <h3>Contact</h3>
                             <p>+381 65 9782 432</p>
-                            <p>info@ebikebelgrade.com</p>
+                            <p>belgrade.ebikes2019@gmail.com</p>
                         </div>
                         <div className={styles.infoBlock}>
                             <h3>Address</h3>
@@ -177,7 +179,14 @@ export default function Navbar() {
             <div className={styles.navContainer}>
                 <div className={styles.logoWrapper}>
                     <Link href="/" className={styles.logo}>
-                        BELGRADE <span className={styles.highlight}>E-BIKES</span>
+                        <Image
+                            src="/Assets/logo.png"
+                            alt="Belgrade E-Bikes Logo"
+                            width={200}
+                            height={80}
+                            className={styles.logoImage}
+                            priority
+                        />
                     </Link>
                 </div>
 

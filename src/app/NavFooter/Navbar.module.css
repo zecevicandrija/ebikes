@@ -201,6 +201,12 @@
     color: #d4af37;
 }
 
+.logoImage {
+    width: auto;
+    height: 80px;
+    object-fit: contain;
+}
+
 .navActions {
     display: flex;
     align-items: center;
@@ -275,6 +281,10 @@
 
     .logo {
         font-size: 1.1rem;
+    }
+
+    .logoImage {
+        height: 50px;
     }
 
     .navActions {

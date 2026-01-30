@@ -1,0 +1,39 @@
+{
+    "Uljeb": {
+        "title": "Association of Electric Bicycle Enthusiasts",
+        "description": "ULJEB is an association dedicated to the development and promotion of electric bicycles as a sustainable, healthy, and accessible mode of transportation in cities across Serbia.",
+        "vision": "Vision",
+        "visionExtended": "We believe that cities can become quieter, cleaner, and more pleasant places to live — with fewer cars, more bicycles, and smart energy solutions. Electric bicycles are not just for recreation; they represent a realistic alternative for everyday transportation, especially in urban environments.",
+        "whatWeDoTitle": "What We Do",
+        "whatWeDoDesc": "Through our activities, we connect sustainable mobility, renewable energy, and public space. Our focus is on practical and visible solutions that citizens can use immediately.",
+        "whatWeDoListIntro": "Our key areas of work include:",
+        "whatWeDoList": [
+            "promoting the use of electric bicycles",
+            "developing solar-powered e-bike charging stations in public spaces",
+            "cooperating with local governments, companies, and institutions",
+            "educating citizens about the benefits of sustainable mobility and energy efficiency"
+        ],
+        "solarTitle": "Solar-Powered E-Bike Charging Stations",
+        "solarDesc": "ULJEB develops and installs public, energy-independent solar charging stations for electric bicycles. These stations use solar energy, do not burden the electricity grid, and are available to all users.",
+        "solarDesc2": "The first charging station was installed in Belgrade, at one of the city's most popular recreational and cycling areas, as a pilot project demonstrating how innovation can directly improve quality of life in urban settings.",
+        "modelTitle": "This model is:",
+        "modelList": [
+            "environmentally sustainable",
+            "easily scalable",
+            "ideal for parks, promenades, recreational zones, and city centers"
+        ],
+        "whyTitle": "Why ULJEB",
+        "whyDesc": "ULJEB brings together people who believe that energy, mobility, and public space are inseparably connected. Our goal goes beyond infrastructure — we aim to change habits and make e-bikes a normal, accepted, and desirable choice.",
+        "cooperationTitle": "We are open to cooperation with:",
+        "cooperationList": [
+            "local authorities",
+            "socially responsible companies",
+            "foundations and organizations that share our values"
+        ],
+        "conclusion": "Together, we can build cities that are healthier, more accessible, and ready for the future.",
+        "seo": {
+            "title": "ULJEB - Association of Electric Bicycle Enthusiasts",
+            "description": "ULJEB is dedicated to promoting e-bikes and sustainable mobility in Serbia. Discover our solar charging stations and mission for cleaner cities."
+        }
+    }
+}

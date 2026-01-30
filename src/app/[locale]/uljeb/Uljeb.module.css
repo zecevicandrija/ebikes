@@ -1,0 +1,571 @@
+/* ========================================
+   ULJEB PAGE - PREMIUM BRUTALIST
+   Similar to Prices Page Style
+   ======================================== */
+
+.page {
+    min-height: 100vh;
+    background: #0a0a0f;
+    color: #fff;
+    padding: 8rem 2rem 4rem;
+    position: relative;
+    overflow-x: hidden;
+}
+
+.ambientGlow {
+    position: fixed;
+    top: 40%;
+    left: -10%;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(212, 175, 55, 0.06) 0%, transparent 70%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* --- LANGUAGE SWITCHER --- */
+.langOverlay {
+    position: fixed;
+    top: 50%;
+    right: 2rem;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    z-index: 999;
+    mix-blend-mode: difference;
+}
+
+.langBtn {
+    font-family: var(--font-display);
+    font-size: 1rem;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.3);
+    text-decoration: none;
+    transform: rotate(90deg);
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    letter-spacing: 0.1em;
+}
+
+.langBtn:hover,
+.activeLang {
+    color: #d4af37;
+    scale: 1.2;
+}
+
+.langDivider {
+    width: 1px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.2);
+    margin: 0 auto;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+/* HEADER */
+.headerSection {
+    margin-bottom: 6rem;
+}
+
+.logoContainer {
+    margin: 3rem 0 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo {
+    object-fit: contain;
+    background: white;
+    border-radius: 50%;
+    padding: 1rem;
+    box-shadow: 0 0 30px rgba(212, 175, 55, 0.2);
+}
+
+.pageTitle {
+    font-family: var(--font-display);
+    font-size: clamp(3rem, 10vw, 8rem);
+    line-height: 0.9;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: -0.03em;
+}
+
+.hollowText {
+    -webkit-text-stroke: 1px rgba(255, 255, 255, 0.8);
+    color: transparent;
+    transition: color 0.5s ease;
+}
+
+.hollowText:hover {
+    color: #fff;
+}
+
+.headerLine {
+    width: 100%;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.1);
+    margin-top: 2rem;
+}
+
+/* GRID */
+.gridContainer {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 2rem;
+    grid-auto-flow: dense;
+}
+
+.gridItem {
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(20, 20, 25, 0.4);
+    padding: 2.5rem;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.gridItem:hover {
+    border-color: rgba(212, 175, 55, 0.4);
+    background: rgba(20, 20, 25, 0.8);
+    transform: translateY(-5px);
+}
+
+/* GRID BLOCKS LAYOUT */
+
+/* Vision (Top Left) */
+.blockVision {
+    grid-column: 1 / 6;
+    grid-row: 1;
+}
+
+/* Image 1 (Top Right) */
+.blockImage1 {
+    grid-column: 6 / 13;
+    grid-row: 1;
+    padding: 0;
+    border: none;
+    min-height: 400px;
+}
+
+/* Image 2 (2nd Row Left) */
+.blockImage2 {
+    grid-column: 1 / 7;
+    grid-row: 2;
+    padding: 0;
+    border: none;
+    min-height: 400px;
+}
+
+/* What We Do (2nd Row Right) */
+.blockWhatWeDo {
+    grid-column: 7 / 13;
+    grid-row: 2;
+}
+
+/* Solar (3rd Row Left) */
+.blockSolar {
+    grid-column: 1 / 6;
+    grid-row: 3;
+}
+
+/* Image 3 (3rd Row Right) */
+.blockImage3 {
+    grid-column: 6 / 13;
+    grid-row: 3;
+    padding: 0;
+    border: none;
+    min-height: 400px;
+}
+
+/* Image 4 (4th Row Left) */
+.blockImage4 {
+    grid-column: 1 / 8;
+    grid-row: 4;
+    padding: 0;
+    border: none;
+    min-height: 400px;
+}
+
+/* The Model (4th Row Right) */
+.blockModel {
+    grid-column: 8 / 13;
+    grid-row: 4;
+}
+
+/* Cooperation (5th Row Full Width) - Compact Premium */
+.blockCooperation {
+    grid-column: 1 / 13;
+    grid-row: 5;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+    padding: 2.5rem 2rem;
+    border: 1px solid rgba(212, 175, 55, 0.3);
+}
+
+.blockCooperation:hover {
+    transform: translateY(0);
+    border-color: rgba(212, 175, 55, 0.5);
+}
+
+/* Decorative Elements */
+.cooperationGlow {
+    position: absolute;
+    top: -30%;
+    right: -10%;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(212, 175, 55, 0.1) 0%, transparent 60%);
+    pointer-events: none;
+}
+
+.cooperationPattern {
+    display: none;
+}
+
+/* Header Section */
+.cooperationHeader {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    position: relative;
+    z-index: 1;
+}
+
+.cooperationLabel {
+    font-family: var(--font-display);
+    font-size: 0.75rem;
+    color: #d4af37;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.cooperationTitle {
+    font-family: var(--font-display);
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    font-weight: 700;
+    background: linear-gradient(135deg, #d4af37 0%, #f4e4b8 50%, #d4af37 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin: 0.3rem 0 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+}
+
+.cooperationDivider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.dividerLine {
+    width: 40px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #d4af37, transparent);
+}
+
+.dividerIcon {
+    font-size: 1rem;
+}
+
+/* Main Content */
+.cooperationContent {
+    max-width: 700px;
+    margin: 0 auto 1.5rem;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+.cooperationText {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.8);
+    font-weight: 300;
+}
+
+/* Partners Section */
+.partnersSection {
+    position: relative;
+    z-index: 1;
+    margin-bottom: 1.5rem;
+}
+
+.partnersTitle {
+    font-family: var(--font-display);
+    text-align: center;
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.5);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+}
+
+.partnerCards {
+    display: flex;
+    justify-content: center;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+}
+
+.partnerCard {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(212, 175, 55, 0.15);
+    border-radius: 8px;
+    padding: 0.6rem 1rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+    cursor: default;
+}
+
+.partnerCard:hover {
+    background: rgba(212, 175, 55, 0.1);
+    border-color: rgba(212, 175, 55, 0.4);
+    transform: translateY(-2px);
+}
+
+.partnerIcon {
+    font-size: 1.2rem;
+}
+
+.partnerName {
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.9);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+/* Conclusion Section */
+.conclusionSection {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    padding-top: 1rem;
+}
+
+.conclusionText {
+    font-family: var(--font-display);
+    font-size: clamp(1rem, 2.5vw, 1.4rem);
+    font-weight: 600;
+    line-height: 1.4;
+    color: rgba(255, 255, 255, 0.9);
+    max-width: 600px;
+    margin: 0 auto 1rem;
+}
+
+.conclusionAccent {
+    width: 60px;
+    height: 2px;
+    background: linear-gradient(90deg, #d4af37, #f4e4b8, #d4af37);
+    margin: 0 auto;
+    border-radius: 1px;
+}
+
+/* Content Styles */
+.itemTitle {
+    font-family: var(--font-display);
+    font-size: 1rem;
+    color: #d4af37;
+    letter-spacing: 0.2em;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+}
+
+.description {
+    color: rgba(255, 255, 255, 0.6);
+    line-height: 1.6;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+.descriptionBold {
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.6;
+    margin-bottom: 1rem;
+    margin-top: 1.5rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.bulletList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.bulletList li {
+    padding-left: 1.5rem;
+    position: relative;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.bulletList li::before {
+    content: '+';
+    position: absolute;
+    left: 0;
+    color: #d4af37;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+/* Images */
+.imageInner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.pImage {
+    object-fit: cover;
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.blockImage1:hover .pImage,
+.blockImage2:hover .pImage,
+.blockImage3:hover .pImage,
+.blockImage4:hover .pImage {
+    transform: scale(1.05);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .gridContainer {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .blockVision,
+    .blockImage1,
+    .blockImage2,
+    .blockWhatWeDo,
+    .blockSolar,
+    .blockImage3,
+    .blockImage4,
+    .blockModel,
+    .blockCooperation {
+        grid-column: 1 / -1;
+        grid-row: auto;
+    }
+
+    /* Reorder for mobile */
+    .blockVision {
+        order: 1;
+    }
+
+    .blockImage1 {
+        order: 2;
+        min-height: 300px;
+    }
+
+    .blockImage2 {
+        order: 3;
+        min-height: 300px;
+    }
+
+    .blockWhatWeDo {
+        order: 4;
+    }
+
+    .blockSolar {
+        order: 5;
+    }
+
+    .blockImage3 {
+        order: 6;
+        min-height: 300px;
+    }
+
+    .blockImage4 {
+        order: 7;
+        min-height: 300px;
+    }
+
+    .blockModel {
+        order: 8;
+    }
+
+    .blockCooperation {
+        order: 9;
+        padding: 1.5rem 1rem;
+    }
+
+    /* Cooperation Section Mobile Styles */
+    .cooperationTitle {
+        font-size: clamp(1.2rem, 5vw, 1.5rem);
+    }
+
+    .cooperationText {
+        font-size: 0.9rem;
+    }
+
+    .partnerCards {
+        gap: 0.5rem;
+    }
+
+    .partnerCard {
+        padding: 0.5rem 0.8rem;
+    }
+
+    .partnerName {
+        font-size: 0.7rem;
+    }
+
+    .conclusionText {
+        font-size: clamp(0.9rem, 3vw, 1.1rem);
+    }
+
+    .dividerLine {
+        width: 30px;
+    }
+
+    .cooperationGlow {
+        display: none;
+    }
+
+    .pageTitle {
+        font-size: 14vw;
+    }
+
+    .langOverlay {
+        top: auto;
+        bottom: 2rem;
+        left: 1rem;
+        right: auto;
+        transform: translateY(0);
+        flex-direction: row;
+        background: rgba(10, 10, 15, 0.9);
+        backdrop-filter: blur(10px);
+        padding: 0.75rem 1rem;
+        border-radius: 50px;
+        border: 1px solid rgba(212, 175, 55, 0.2);
+        gap: 0.5rem;
+    }
+
+    .langBtn {
+        transform: rotate(0);
+        font-size: 1rem;
+    }
+
+    .langDivider {
+        width: 1px;
+        height: 20px;
+    }
+}

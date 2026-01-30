@@ -41,7 +41,7 @@ export default function Footer() {
                         <h4 className={styles.colTitle}>CONTACT</h4>
                         <div className={styles.contactInfo}>
                             <p>Belgrade, Serbia</p>
-                            <p><a href="mailto:info@belgradeebikes.com">info@belgradeebikes.com</a></p>
+                            <p><a href="mailto:belgrade.ebikes2019@gmail.com">belgrade.ebikes2019@gmail.com</a></p>
                             <p><a href="tel:+381659782432">+381 65 9782 432</a></p>
                         </div>
                     </div>
