@@ -94,8 +94,8 @@ export default function ClientPage({ locale }) {
                     <div className={`${styles.gridItem} ${styles.blockImage1}`}>
                         <div className={styles.imageInner}>
                             <Image
-                                src="/Assets/adv1.jpg"
-                                alt="E-Bike Adventure"
+                                src="/Assets/Vizija.jpg"
+                                alt="Vizija - Future of Green Mobility"
                                 fill
                                 className={styles.pImage}
                             />
@@ -106,8 +106,8 @@ export default function ClientPage({ locale }) {
                     <div className={`${styles.gridItem} ${styles.blockImage2}`}>
                         <div className={styles.imageInner}>
                             <Image
-                                src="/Assets/adv3.jpg"
-                                alt="City Exploration"
+                                src="/Assets/sta radimo.jpg"
+                                alt="Šta radimo - Innovative Cycle Solutions"
                                 fill
                                 className={styles.pImage}
                             />
@@ -155,8 +155,8 @@ export default function ClientPage({ locale }) {
                     <div className={`${styles.gridItem} ${styles.blockImage3}`}>
                         <div className={styles.imageInner}>
                             <Image
-                                src="/Assets/adv5.jpg"
-                                alt="Sustainable Transport"
+                                src="/Assets/Design of Solar bike charger point.png"
+                                alt="Solarne Punionice - Green Energy Charging"
                                 fill
                                 className={styles.pImage}
                             />

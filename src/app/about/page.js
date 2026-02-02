@@ -116,9 +116,6 @@ export default function About() {
                                 informative and designed for all skill levels.
                             </p>
                             <div className={styles.separator} />
-                            <p className={styles.descText}>
-                                The tour features our custom electric bikes with a strong pedal assist. great for riders who want direction from our e-guide software.
-                            </p>
                         </div>
                     </div>
 
