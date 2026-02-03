@@ -1,14 +1,17 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useActionState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import styles from "./page.module.css";
+import { submitBooking } from "./actions";
 
 gsap.registerPlugin(ScrollTrigger);
+ScrollTrigger.config({ ignoreMobileResize: true });
 
 export default function Home() {
   const containerRef = useRef(null);
+  const [state, formAction, isPending] = useActionState(submitBooking, { success: false, message: '' });
   const videoRef = useRef(null);
   const heroRef = useRef(null);
   const titleRef = useRef(null);
@@ -187,31 +190,37 @@ export default function Home() {
               </p>
             </div>
 
-            <form ref={formRef} className={styles.bookingForm}>
+            <form ref={formRef} className={styles.bookingForm} action={formAction}>
+              {state.message && (
+                <p style={{ color: state.success ? 'green' : 'red', marginBottom: '1rem' }}>
+                  {state.message}
+                </p>
+              )}
               <div className={styles.gridRow}>
                 <div ref={addToRefs} className={styles.inputGroup}>
-                  <input type="text" placeholder="First Name" className={styles.cleanInput} />
+                  <input type="text" name="firstName" placeholder="First Name" className={styles.cleanInput} required />
                   <div className={styles.inputHighlight}></div>
                 </div>
                 <div ref={addToRefs} className={styles.inputGroup}>
-                  <input type="text" placeholder="Last Name" className={styles.cleanInput} />
+                  <input type="text" name="lastName" placeholder="Last Name" className={styles.cleanInput} required />
                   <div className={styles.inputHighlight}></div>
                 </div>
               </div>
 
               <div className={styles.gridRow}>
                 <div ref={addToRefs} className={styles.inputGroup}>
-                  <input type="email" placeholder="Email Address" className={styles.cleanInput} />
+                  <input type="email" name="email" placeholder="Email Address" className={styles.cleanInput} required />
                   <div className={styles.inputHighlight}></div>
                 </div>
                 <div ref={addToRefs} className={styles.inputGroup}>
-                  <input type="tel" placeholder="Phone Number" className={styles.cleanInput} />
+                  <input type="tel" name="phone" placeholder="Phone Number" className={styles.cleanInput} />
                   <div className={styles.inputHighlight}></div>
                 </div>
               </div>
 
               <div ref={addToRefs} className={styles.inputGroup}>
                 <textarea
+                  name="message"
                   placeholder="Tell us about your trip..."
                   className={`${styles.cleanInput} ${styles.cleanTextarea}`}
                   rows="1"
@@ -225,8 +234,8 @@ export default function Home() {
                   <a href="tel:+381659782432">+381 65 9782 432</a>
                 </div>
 
-                <button type="submit" className={styles.submitBtn}>
-                  <span>CONFIRM BOOKING</span>
+                <button type="submit" className={styles.submitBtn} disabled={isPending}>
+                  <span>{isPending ? 'SENDING...' : 'CONFIRM BOOKING'}</span>
                   <div className={styles.btnFill}></div>
                 </button>
               </div>

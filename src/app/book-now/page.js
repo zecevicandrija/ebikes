@@ -1,13 +1,15 @@
 "use client";
 
-import { useRef } from "react";
+import { useRef, useActionState } from "react";
 import Link from "next/link";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import styles from "./Book.module.css";
+import { submitBooking } from "../actions";
 
 export default function Book() {
     const containerRef = useRef(null);
+    const [state, formAction, isPending] = useActionState(submitBooking, { success: false, message: '' });
 
     useGSAP(() => {
         const tl = gsap.timeline();
@@ -80,21 +82,26 @@ export default function Book() {
                     <div className={`${styles.gridItem} ${styles.blockForm}`}>
                         <h2 className={styles.blockTitle}>02 / RESERVATION</h2>
 
-                        <form className={styles.form}>
+                        <form className={styles.form} action={formAction}>
+                            {state.message && (
+                                <p style={{ color: state.success ? 'green' : 'red', marginBottom: '1rem' }}>
+                                    {state.message}
+                                </p>
+                            )}
                             <div className={styles.row}>
                                 <div className={styles.inputGroup}>
                                     <label htmlFor="firstName" className={styles.label}>First Name</label>
-                                    <input type="text" id="firstName" name="firstName" className={styles.input} placeholder="John" />
+                                    <input type="text" id="firstName" name="firstName" className={styles.input} placeholder="John" required />
                                 </div>
                                 <div className={styles.inputGroup}>
                                     <label htmlFor="lastName" className={styles.label}>Last Name</label>
-                                    <input type="text" id="lastName" name="lastName" className={styles.input} placeholder="Doe" />
+                                    <input type="text" id="lastName" name="lastName" className={styles.input} placeholder="Doe" required />
                                 </div>
                             </div>
 
                             <div className={styles.inputGroup}>
                                 <label htmlFor="email" className={styles.label}>Email</label>
-                                <input type="email" id="email" name="email" className={styles.input} placeholder="john@example.com" />
+                                <input type="email" id="email" name="email" className={styles.input} placeholder="john@example.com" required />
                             </div>
 
                             <div className={styles.inputGroup}>
@@ -107,8 +114,8 @@ export default function Book() {
                                 <textarea id="message" name="message" rows="4" className={`${styles.input} ${styles.textarea}`} placeholder="Tell us about your trip..."></textarea>
                             </div>
 
-                            <button type="submit" className={styles.submitBtn}>
-                                <span>CONFIRM BOOKING</span>
+                            <button type="submit" className={styles.submitBtn} disabled={isPending}>
+                                <span>{isPending ? 'SENDING...' : 'CONFIRM BOOKING'}</span>
                                 <div className={styles.btnFill}></div>
                             </button>
                         </form>

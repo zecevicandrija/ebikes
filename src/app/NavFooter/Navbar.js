@@ -191,7 +191,7 @@ export default function Navbar() {
                 </div>
 
                 <div className={styles.navActions}>
-                    <Link href="/book" className={styles.bookBtn}>
+                    <Link href="/book-now" className={styles.bookBtn}>
                         Book Now
                     </Link>
                     <button
