@@ -18,7 +18,7 @@ export async function submitBooking(prevState, formData) {
 
         const { data, error } = await resend.emails.send({
             from: 'Belgrade E-Bikes <onboarding@belgrade-ebikes.com>', // Use the default testing domain provided by Resend or your verified domain
-            to: ['zecevic144@gmail.com'],
+            to: ['belgrade.ebikes2019@gmail.com'],
             subject: `New Booking Request from ${firstName} ${lastName}`,
             html: `
         <h1>New Booking Request</h1>
