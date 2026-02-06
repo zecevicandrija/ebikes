@@ -17,7 +17,7 @@
 /* TOP GRID */
 .topSection {
     display: grid;
-    grid-template-columns: 2fr 1fr 1fr 1.5fr;
+    grid-template-columns: 2fr 1fr 1fr 1fr 0.8fr;
     gap: 4rem;
 }
 
@@ -77,6 +77,26 @@
 .link:hover {
     color: #fff;
     transform: translateX(5px);
+}
+
+.socialIcons {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    margin-top: 0.5rem;
+}
+
+.iconLink {
+    color: rgba(255, 255, 255, 0.7);
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.iconLink:hover {
+    color: #d4af37;
+    transform: translateY(-2px);
 }
 
 .contactInfo p {
