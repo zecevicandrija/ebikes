@@ -100,7 +100,11 @@ export default async function Page({ params }) {
             '@type': 'PostalAddress',
             addressLocality: 'Beograd',
             addressCountry: 'RS'
-        }
+        },
+        sameAs: [
+            "https://www.facebook.com/belgrade.ebikes.3/",
+            "https://www.instagram.com/belgrade_e_bikes/"
+        ]
     };
 
     return (
