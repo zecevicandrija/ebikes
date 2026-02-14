@@ -26,7 +26,9 @@ export async function generateMetadata({ params }) {
 
     const title = messages.Uljeb.seo.title;
     const description = messages.Uljeb.seo.description;
-    const specificUrl = `https://www.belgrade-ebikes.com/${locale}/uljeb`;
+    const specificUrl = locale === 'en' 
+        ? `https://www.belgrade-ebikes.com/uljeb` 
+        : `https://www.belgrade-ebikes.com/${locale}/uljeb`;
     const sitename = "Belgrade E-Bikes";
 
     return {
@@ -37,7 +39,7 @@ export async function generateMetadata({ params }) {
         alternates: {
             canonical: specificUrl,
             languages: {
-                'en': 'https://www.belgrade-ebikes.com/en/uljeb',
+                'en': 'https://www.belgrade-ebikes.com/uljeb',
                 'sr': 'https://www.belgrade-ebikes.com/sr/uljeb',
             },
         },

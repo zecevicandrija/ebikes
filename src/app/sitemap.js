@@ -70,6 +70,12 @@ export default function sitemap() {
         },
         // IMPORTANT: Explicitly listing the Serbian ULJEB page
         {
+            url: `${baseUrl}/uljeb`,
+            lastModified: new Date(),
+            changeFrequency: 'weekly',
+            priority: 0.9,
+        },
+        {
             url: `${baseUrl}/sr/uljeb`,
             lastModified: new Date(),
             changeFrequency: 'weekly',

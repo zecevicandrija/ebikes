@@ -43,6 +43,9 @@ export const metadata = {
     description: "Premium E-Bike Rental & Tours in Belgrade. Book now!",
     images: ["/Assets/bikerental.jpg"],
   },
+  alternates: {
+    canonical: './',
+  },
   robots: {
     index: true,
     follow: true,
