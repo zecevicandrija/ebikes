@@ -10,7 +10,12 @@ export default createMiddleware({
     // Don't prefix the default locale (en)
     // /uljeb -> English
     // /sr/uljeb -> Serbian
-    localePrefix: 'as-needed'
+    localePrefix: 'as-needed',
+
+    // Disable cookie-based locale detection so URLs always
+    // determine the language. Without this, visiting /sr/uljeb
+    // sets a cookie that makes /uljeb redirect to /sr/uljeb.
+    localeDetection: false
 });
 
 export const config = {

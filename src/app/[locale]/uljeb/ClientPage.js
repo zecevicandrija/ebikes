@@ -44,7 +44,7 @@ export default function ClientPage({ locale }) {
         <div ref={containerRef} className={styles.page}>
             {/* LANGUAGE OVERLAY */}
             <div className={styles.langOverlay}>
-                <a href="/en/uljeb" className={`${styles.langBtn} ${locale === 'en' ? styles.activeLang : ''}`}>
+                <a href="/uljeb" className={`${styles.langBtn} ${locale === 'en' ? styles.activeLang : ''}`}>
                     EN
                 </a>
                 <div className={styles.langDivider} />
