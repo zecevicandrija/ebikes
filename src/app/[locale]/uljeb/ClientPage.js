@@ -155,7 +155,7 @@ export default function ClientPage({ locale }) {
                     <div className={`${styles.gridItem} ${styles.blockImage3}`}>
                         <div className={styles.imageInner}>
                             <Image
-                                src="/Assets/Design of Solar bike charger point.png"
+                                src="/Assets/Final_punionica.jpg"
                                 alt="Solarne Punionice - Green Energy Charging"
                                 fill
                                 className={styles.pImage}
